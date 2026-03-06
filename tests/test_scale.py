@@ -1,4 +1,4 @@
-from sparkplot.scale import Scale
+from chalk.scale import Scale
 
 
 class TestScaleApply:

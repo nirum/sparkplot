@@ -1,4 +1,4 @@
-from sparkplot.canvas import Canvas
+from chalk.canvas import Canvas
 
 
 class TestCanvasInit:

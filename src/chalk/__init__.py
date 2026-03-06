@@ -1,9 +1,9 @@
-from sparkplot.canvas import Canvas
-from sparkplot.charset import ASCII, UNICODE, CharSet
-from sparkplot.layout import assemble_hist_plot, assemble_line_plot
-from sparkplot.rasterize import compute_bins, draw_bars, draw_line_segment
-from sparkplot.scale import Scale
-from sparkplot.validate import (
+from chalk.canvas import Canvas
+from chalk.charset import ASCII, UNICODE, CharSet
+from chalk.layout import assemble_hist_plot, assemble_line_plot
+from chalk.rasterize import compute_bins, draw_bars, draw_line_segment
+from chalk.scale import Scale
+from chalk.validate import (
     validate_bins,
     validate_charset,
     validate_dimensions,

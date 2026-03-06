@@ -1,5 +1,5 @@
 [project]
-name = "sparkplot"
+name = "chalk"
 version = "0.1.0"
 description = "A small Python library for rendering plots as plain text to stdout"
 authors = [
@@ -16,4 +16,5 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
 ]

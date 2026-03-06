@@ -1,5 +1,5 @@
-from sparkplot.canvas import Canvas
-from sparkplot.charset import CharSet
+from chalk.canvas import Canvas
+from chalk.charset import CharSet
 
 
 def _choose_char(dx: int, dy: int, cs: CharSet) -> str:

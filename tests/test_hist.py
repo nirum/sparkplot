@@ -3,7 +3,7 @@ import random
 
 import pytest
 
-import sparkplot as sp
+import chalk as sp
 
 FIXTURES = pathlib.Path(__file__).parent / "fixtures"
 

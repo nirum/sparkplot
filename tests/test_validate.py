@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from sparkplot.validate import (
+from chalk.validate import (
     validate_bins,
     validate_charset,
     validate_dimensions,
