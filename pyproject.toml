@@ -1,0 +1,18 @@
+[project]
+name = "sparkplot"
+version = "0.1.0"
+description = "A small Python library for rendering plots as plain text to stdout"
+authors = [
+    { name = "Niru Maheswaranathan", email = "niru@fastmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.10.8,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
