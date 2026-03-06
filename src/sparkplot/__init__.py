@@ -1,11 +1,13 @@
 from sparkplot.canvas import Canvas
 from sparkplot.charset import ASCII, UNICODE, CharSet
-from sparkplot.layout import assemble_line_plot
-from sparkplot.rasterize import draw_line_segment
+from sparkplot.layout import assemble_hist_plot, assemble_line_plot
+from sparkplot.rasterize import compute_bins, draw_bars, draw_line_segment
 from sparkplot.scale import Scale
 from sparkplot.validate import (
+    validate_bins,
     validate_charset,
     validate_dimensions,
+    validate_numbers,
     validate_render,
     validate_xy,
 )
@@ -54,6 +56,49 @@ def line(
         canvas.set(cx[0], cy[0], cs.horizontal)
 
     result = assemble_line_plot(canvas, x_scale, y_scale, cs, title, width)
+
+    if render_mode == "string":
+        return result
+    print(result)
+    return None
+
+
+def hist(
+    data: list[float] | list[int],
+    *,
+    bins: int = 10,
+    title: str | None = None,
+    width: int = 60,
+    height: int = 20,
+    charset: str = "unicode",
+    render: str = "print",
+) -> str | None:
+    """Render a histogram."""
+    validate_dimensions(width, height)
+    cs_name = validate_charset(charset)
+    render_mode = validate_render(render)
+    validated_bins = validate_bins(bins)
+    cs: CharSet = UNICODE if cs_name == "unicode" else ASCII
+
+    values = validate_numbers(data)
+
+    edges, counts = compute_bins(values, validated_bins)
+    max_count = max(counts) if counts else 0
+
+    bar_width = 2
+    gap = 1
+    # Compute canvas width needed for bars
+    canvas_width = len(counts) * (bar_width + gap) - gap
+    canvas_width = max(canvas_width, 10)
+
+    canvas = Canvas(canvas_width, height)
+    y_scale = Scale(0, max_count, 0, height - 1)
+
+    draw_bars(canvas, counts, max_count, cs, bar_width, gap)
+
+    result = assemble_hist_plot(
+        canvas, counts, edges, y_scale, cs, title, bar_width, gap
+    )
 
     if render_mode == "string":
         return result

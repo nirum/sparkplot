@@ -159,6 +159,7 @@ def assemble_hist_plot(
         ]
     label_indices = sorted(set(label_indices))
 
+    last_end = -1
     for idx in label_indices:
         if idx > len(edges) - 1:
             continue
@@ -169,10 +170,14 @@ def assemble_hist_plot(
             px = (n_bins - 1) * (bar_width + gap) + bar_width
         pos = y_label_width + 1 + px - len(lbl) // 2
         pos = max(0, pos)
+        # Skip if overlapping with previous label
+        if pos <= last_end:
+            continue
         for j, ch in enumerate(lbl):
             p = pos + j
             if p < len(label_line):
                 label_line[p] = ch
+        last_end = pos + len(lbl)
 
     lines.append("".join(label_line).rstrip())
 
