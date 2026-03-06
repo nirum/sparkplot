@@ -1,6 +1,6 @@
-from chalk.canvas import Canvas
-from chalk.charset import CharSet
-from chalk.scale import Scale
+from sketchplot.canvas import Canvas
+from sketchplot.charset import CharSet
+from sketchplot.scale import Scale
 
 
 def _format_tick(value: float) -> str:

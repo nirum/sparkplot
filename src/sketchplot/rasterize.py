@@ -1,5 +1,5 @@
-from chalk.canvas import Canvas
-from chalk.charset import CharSet
+from sketchplot.canvas import Canvas
+from sketchplot.charset import CharSet
 
 
 def _choose_char(dx: int, dy: int, cs: CharSet) -> str:

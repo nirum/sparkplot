@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from chalk.validate import (
+from sketchplot.validate import (
     validate_bins,
     validate_charset,
     validate_dimensions,

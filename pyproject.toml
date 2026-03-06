@@ -1,5 +1,5 @@
 [project]
-name = "chalk"
+name = "sketchplot"
 version = "0.1.0"
 description = "A small Python library for rendering plots as plain text to stdout"
 authors = [

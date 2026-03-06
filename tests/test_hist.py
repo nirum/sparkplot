@@ -3,7 +3,7 @@ import random
 
 import pytest
 
-import chalk as sp
+import sketchplot as sp
 
 FIXTURES = pathlib.Path(__file__).parent / "fixtures"
 

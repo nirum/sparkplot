@@ -1,17 +1,17 @@
-# sparkplot
+# sketchplot
 
 A small Python library for rendering plots as plain text to stdout. No dependencies beyond the Python standard library.
 
 ## Install
 
 ```
-pip install sparkplot
+pip install sketchplot
 ```
 
 ## Usage
 
 ```python
-import sparkplot as sp
+import sketchplot as sp
 
 # Line plot — y only (x inferred as 0..n-1)
 sp.line([1, 4, 2, 8, 5, 7])

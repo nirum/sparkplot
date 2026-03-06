@@ -1,4 +1,4 @@
-from chalk.canvas import Canvas
+from sketchplot.canvas import Canvas
 
 
 class TestCanvasInit:

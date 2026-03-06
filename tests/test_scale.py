@@ -1,4 +1,4 @@
-from chalk.scale import Scale
+from sketchplot.scale import Scale
 
 
 class TestScaleApply:

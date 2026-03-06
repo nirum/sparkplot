@@ -1,9 +1,9 @@
-from chalk.canvas import Canvas
-from chalk.charset import ASCII, UNICODE, CharSet
-from chalk.layout import assemble_hist_plot, assemble_line_plot
-from chalk.rasterize import compute_bins, draw_bars, draw_line_segment
-from chalk.scale import Scale
-from chalk.validate import (
+from sketchplot.canvas import Canvas
+from sketchplot.charset import ASCII, UNICODE, CharSet
+from sketchplot.layout import assemble_hist_plot, assemble_line_plot
+from sketchplot.rasterize import compute_bins, draw_bars, draw_line_segment
+from sketchplot.scale import Scale
+from sketchplot.validate import (
     validate_bins,
     validate_charset,
     validate_dimensions,

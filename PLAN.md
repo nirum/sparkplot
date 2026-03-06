@@ -1,4 +1,4 @@
-# sparkplot — Design Document
+# sketchplot — Design Document
 
 **A small Python library for rendering plots as plain text to stdout.**
 
@@ -6,7 +6,7 @@
 
 Graphical plotting libraries (matplotlib, plotly, etc.) require a display server, browser, or image backend. This makes them unusable or awkward in common scenarios: SSH sessions, CI pipeline logs, quick debugging, teaching in a terminal, and lightweight scripts where pulling in heavy dependencies is undesirable.
 
-`sparkplot` renders line plots and histograms as text directly to stdout. It targets correctness and simplicity over visual fidelity. The output is deterministic, testable, and readable in any terminal.
+`sketchplot` renders line plots and histograms as text directly to stdout. It targets correctness and simplicity over visual fidelity. The output is deterministic, testable, and readable in any terminal.
 
 ## 2. Goals
 
@@ -46,7 +46,7 @@ Graphical plotting libraries (matplotlib, plotly, etc.) require a display server
 ### Public functions
 
 ```python
-import sparkplot as sp
+import sketchplot as sp
 
 # Line plot — y only (x inferred as 0..n-1)
 sp.line([1, 4, 2, 8, 5, 7])
@@ -204,7 +204,7 @@ If profiling later shows a bottleneck, the most likely candidate is line rasteri
 ## 13. Package Structure
 
 ```
-sparkplot/
+sketchplot/
 ├── __init__.py          # Public API: line(), hist()
 ├── canvas.py            # Canvas class
 ├── scale.py             # Scale class
