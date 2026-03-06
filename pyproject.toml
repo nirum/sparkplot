@@ -5,6 +5,7 @@ description = "A small Python library for rendering plots as plain text to stdou
 authors = [
     { name = "Niru Maheswaranathan", email = "niru@fastmail.com" }
 ]
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = []
 

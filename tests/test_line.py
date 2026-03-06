@@ -47,6 +47,35 @@ class TestLineSnapshot:
         assert result == _read_fixture("line_small_ascii.txt")
 
 
+class TestLineEdgeCases:
+    def test_single_point_unicode(self) -> None:
+        result = sp.line([5], width=20, height=10, render="string")
+        assert result == _read_fixture("line_single_point_unicode.txt")
+
+    def test_single_point_ascii(self) -> None:
+        result = sp.line([5], width=20, height=10, render="string", charset="ascii")
+        assert result == _read_fixture("line_single_point_ascii.txt")
+
+    def test_constant_unicode(self) -> None:
+        result = sp.line([5, 5, 5, 5], width=20, height=10, render="string")
+        assert result == _read_fixture("line_constant_unicode.txt")
+
+    def test_constant_ascii(self) -> None:
+        result = sp.line(
+            [5, 5, 5, 5], width=20, height=10, render="string", charset="ascii"
+        )
+        assert result == _read_fixture("line_constant_ascii.txt")
+
+    def test_minimum_canvas(self) -> None:
+        result = sp.line([1, 4, 2, 8], width=10, height=10, render="string")
+        assert isinstance(result, str)
+        assert len(result) > 0
+
+    def test_large_dataset(self) -> None:
+        result = sp.line(list(range(10000)), render="string")
+        assert isinstance(result, str)
+
+
 class TestLinePrint:
     def test_print_mode_returns_none(self, capsys: pytest.CaptureFixture[str]) -> None:
         result = sp.line([1, 2, 3], render="print")
